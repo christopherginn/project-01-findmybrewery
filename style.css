@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding-top: 20%;
+}
+
+.title button {
+    align-self: center;
+}
+
+.title {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 65px;
+    color: rgb(152, 199, 0);
+    text-shadow: 5px 5px black;
+}
+
+body {
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/773/465/large_2x/celebration-of-beer-background-free-vector.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.button {
+    background-color: bisque;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+  }

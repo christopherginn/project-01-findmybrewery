@@ -4,42 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Find My Brewery</title>
 </head>
 <body>
-    <main>
-        <section class="hero is-large is-info">
-            <section class="hero-body">
-              <p class="title">
-                Find My Brewery
-              </p>
-              <button class="button" id="enterBtn">ENTER</button>
-            </section>
-        </section>
-        <div class="modal is-active">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-              <header class="modal-card-head">
-                <p class="modal-card-title">Enter Your Date of Birth</p>
-                <button class="delete" aria-label="close"></button>
-              </header>
-              <section class="modal-card-body">
-                <!-- Content ... -->
-                <p>Date: <input type="text" id="datepicker"></p>
-              </section>
-              <footer class="modal-card-foot">
-                <button class="button is-success">Submit</button>
-                <button class="button">Cancel</button>
-              </footer>
-            </div>
-          </div>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./src/index.js"></script>
+  <main>
+    <section class="container">
+      <h1 class="title">Find My Brewery</h1>
+      <button class="button" id="enterBtn">ENTER</button>
+    </section>
+    <div class="modal">
+      <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Enter Your Date of Birth</p>
+              <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+          <!-- Content ... -->
+            <p>Date: <input type="text" id="datepicker"></p>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-success">Submit</button>
+            <button class="button">Cancel</button>
+          </footer>
+        </div>
+      </div>
+    </div>  
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./assets/script.js"></script>
+
+  <footer>Made in collaboration by: AJ Figueroa, Chris Ginn and Ben Smith</footer>
 </body>
 </html>
