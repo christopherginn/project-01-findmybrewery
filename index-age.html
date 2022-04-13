@@ -21,7 +21,7 @@
       <h1 class="title">Find My Brewery</h1>
       <button class="button" id="enterBtn">ENTER</button>
     </section>
-    <div class="modal">
+    <div class="modal" id="age-verify">
       <div class="modal-background"></div>
         <div class="modal-card">
           <header class="modal-card-head">
@@ -38,7 +38,16 @@
           </footer>
         </div>
       </div>
-    </div>  
+    </div> 
+    <div class="modal" id="access-denied">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <p class="image is-4by3">
+          <img src="https://64.media.tumblr.com/e27cb0108080a13a7618a34d4492aae8/tumblr_om3wzrm1ou1rn5gv3o1_500.gif" alt="computer screen displaying 'access denied'">
+        </p>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div> 
   </main>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./assets/script.js"></script>
