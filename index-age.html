@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Find My Brewery</title>
 </head>
 <body>
@@ -21,24 +19,29 @@
       <h1 class="title">Find My Brewery</h1>
       <button class="button" id="enterBtn">ENTER</button>
     </section>
-    <div class="modal" id="age-verify">
+
+    <div class="modal" id="age-check-modal">
       <div class="modal-background"></div>
         <div class="modal-card">
+
           <header class="modal-card-head">
             <p class="modal-card-title">Enter Your Date of Birth</p>
-              <button class="delete" aria-label="close"></button>
+              <button id="close-modal" class="delete" aria-label="close"></button>
           </header>
+
           <section class="modal-card-body">
-          <!-- Content ... -->
             <p>Date: <input type="text" id="datepicker"></p>
           </section>
+
           <footer class="modal-card-foot">
-            <button class="button is-success">Submit</button>
-            <button class="button">Cancel</button>
+            <button id="submit-button" class="button is-success">Submit</button>
+            <button id="cancel-button" class="button">Cancel</button>
           </footer>
+
         </div>
       </div>
     </div> 
+
     <div class="modal" id="access-denied">
       <div class="modal-background"></div>
         <div class="modal-content">
@@ -46,11 +49,14 @@
             <img src="https://64.media.tumblr.com/e27cb0108080a13a7618a34d4492aae8/tumblr_om3wzrm1ou1rn5gv3o1_500.gif" alt="computer screen displaying 'access denied'">
           </p>
         </div>
-        <button class="modal-close is-large" aria-label="close"></button>
+        <button id="access-close" class="modal-close is-large" aria-label="close"></button>
       </div>
-    </div> 
+     
+
   </main>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <script src="./assets/script.js"></script>
 
   <footer>Made in collaboration by: AJ Figueroa, Chris Ginn and Ben Smith</footer>
