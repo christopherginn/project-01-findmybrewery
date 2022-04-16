@@ -7,13 +7,22 @@
 }
 
 html {
-    background-image: url(https://static.wixstatic.com/media/57f33c_51a1560ccb2d44b7ba0e371c15ca3ad7~mv2.jpg/v1/crop/x_114,y_0,w_3992,h_2379/fill/w_2872,h_1712,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/DSC_9338.jpg);
+    background-image: url(https://cdn4.vectorstock.com/i/1000x1000/00/43/beer-paper-wood-background-vector-1630043.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     /* height: 100%; */
 }
+
+#search-btn {
+    margin: 5px 0px;
+}
+
+#clear-history {
+    margin-bottom: 5px;
+}
+
 
 .navbar {
     background-color: goldenrod;
@@ -27,22 +36,19 @@ button {
     text-transform: capitalize;
 }
 
-dt {
-    float: left;
-}
-
 .btn {
     margin: 2px;
 }
 
 #brewery-display-container {
     min-height: 230px;
-    border: 1px solid gray;
+    border: 1px solid rgb(16, 195, 0);
 }
 
 #search-title {
-    font-size: 25px;
-    color: silver;
+    font-size: 30px;
+    color: rgba(20, 175, 0, 0.824);
+    font-weight: bolder;
 }
 #search-bar-container, input, #button-container button {
     margin-bottom: var(--spacing);
@@ -54,4 +60,10 @@ dt {
 }
 .hide {
     display: none;
+}
+
+.card {
+    background-color: goldenrod;
+    font-size: 15px;
+    color: black;
 }
