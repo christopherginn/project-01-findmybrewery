@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/result-style.css">
+    <title>🍻Find My Brewery</title>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <!-- navbar items, navbar burger... -->
+          <a class="navbar-item">
+            Favorites
+          </a>
+        </div>
+      </nav>   
+        <section class="container is-fluid">
+            <section class="columns">
+                <section class="column is-half">
+                    <aside>
+                        <section id="search-bar container">
+                            <h2 class="column is-one-third" id="search-title">Search for a City:</h2>
+                            <form id="search-form">
+                                <input type="text" placeholder="Enter City..." id="search-input" class="column is-one-third form-control">
+                                <button class="btn btn-primary column is-one-third">Search</button>
+                            </form>
+                            <button class="btn btn-primary column is-one-third" id="clear-history">Clear History</button>
+                        </section>
+                        <section class="column is-one-third" id="button-container"></section>
+                    </aside>
+                </section>
+                <section class="column">
+                    <main>
+                        <section class="hide row container" id="brewery-display">
+                            <section class="column">
+                                <!-- card to display the brewery search results -->
+                                <div class="card">
+                                    <header class="card-header">
+                                      <p class="card-header-title" id="brewery-name">
+                                      </p>
+                                    </header>
+                                    <div class="card-content">
+                                      <div class="content" id="brewery-info">
+                                        <dl>
+                                            <dt>Type:</dt>
+                                            <dd id="brewery-type"></dd>
+                                            <dt>Address:</dt>
+                                            <dd id="brewery-adress"></dd>
+                                            <dt>Phone:</dt>
+                                            <dd id="brewery-phone"></dd>
+                                            <dt>Website:</dt>
+                                            <dd id="brewery-website"></dd>
+                                        </dl>
+                                        <br>
+                                      </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                      <a href="#" class="card-footer-item" id="save-to-favorites">Save to Favorites</a>
+                                      <a href="#" class="card-footer-item" id="get-directions">Get Directions</a>
+                                    </footer>
+                                  </div>
+                            </section>
+                        </section>
+                    </main>
+                </section>
+            </section>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
