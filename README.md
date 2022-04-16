@@ -9,7 +9,7 @@ We have worked together to develop a web page to help tourists and locals find t
 We developed this page to provide an alternative to those searching to quest their thirst with a nice brew and are looking to do so in the ambiance of the brewery rather than a crowded bar. It simple to use and easy to read, easily leading and providing the user with the alternatives at hand for them to choose from. In time this page can expand and grow it's ability to search any city you are visiting in the world.
 
 ## User Story
-AS A traveler and beer enthusiast,  
+AS A beer enthusiast,  
 I WANT to be able to search for nearby breweries in the city I am visiting,  
 SO THAT I can enjoy the brewery 🍻 without spending hours looking around.
 
@@ -20,7 +20,8 @@ This page was made with:
 *Bulma*  
 *Google Fonts*  
 *Open Brewery DB API*  
-*One Call Weather API*
+*Google maps API*  
+*Geocode API*
 
 In collaboration by: AJ Figueroa, Chris Ginn and Ben Smith.
 
