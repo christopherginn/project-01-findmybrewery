@@ -4,20 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Button</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    
     <link rel="stylesheet" href="assets/searchbar-style.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <input type="text" class="input" placeholder="what are you looking for?">
-    <div class="searchbtn">
-        <i class="fas fa-search"></i>
+  <h1 class="title">Find My Brewery</h1>
+  <form class="container">
+    <h2>Search for breweries by <span>city</span>, by <span>type</span>, or <span>both!</span></h2><br>
+    <input type="text" class="input level" id="city-input" name="city"placeholder="Enter a city here">
+
+    <div class="level type-options">
+        <input type="radio" class="column" id="typechoice-micro" name="type" value="micro">
+        <label for="typechoice-micro">Micro</label>
+        <input type="radio" class="column" id="typechoice-regional" name="type" value="regional">
+        <label for="typechoice-regional">Regional</label>
+        <input type="radio" class="column" id="typechoice-brewpub" name="type" value="brewpub">
+        <label for="typechoice-brewpub">Brewpub</label>
     </div>
-  </div>
+    <div class="level">
+      <button id="submitBtn" class="searchbtn" value="Submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </form>
 
-</button>
-</form>
-
+  <script src="./assets/search.js"></script>
 </body>
 </html>

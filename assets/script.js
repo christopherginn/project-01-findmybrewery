@@ -7,6 +7,7 @@ var submitBtn = $('#submit-button');
 var cancelBtn=$('#cancel-button');
 var accessDeniedmodal = $('#access-denied');
 
+
 enterBtnEl.on("click", function () {
   // modalEl.fadeIn('fast', function(){
   //   modalEl.addClass("is-active");
@@ -51,21 +52,10 @@ submitBtn.on("click", function(){
     $('#access-close').on('click', function(){
       accessDeniedmodal.removeClass("is-active");
     })
-    // $(modalEl).html(`
-    // <div class="modal-background"></div>
-    // <div class="modal-card">
-    //   <header class="modal-card-head">
-    //     <p class="modal-card-title">Sorry! It looks like you're not old enough.</p>
-    //     <button id="close-modal" class="delete" aria-label="close"></button>
-    //   </header>
-    //   <section class="modal-card-body">
-    //     <h2>You're more than welcome back when you're over the age of 21!</h2>
-    //   </section>
-    // </div>
-    // `);
     
   } else if (diff >= 21){
     document.location.replace("./index-searchbar.html");
+  
   }
 
   closeModal();
@@ -74,22 +64,10 @@ submitBtn.on("click", function(){
 function closeModal(){
   closeModalEl.on("click", function(){
     modalEl.removeClass("is-active");
+
   });
 };
 
-// $('#access-close').on('click', function(){
-//   accessDeniedmodal.removeClass("is-active");
-// })
-
 closeModal();
-// closeModalEl.on("click", function(){
-//   modalEl.removeClass("is-active");
-// });
 
-
-// var enterBtnEl = document.getElementById("#enterBtn");
-
-// enterBtnEl.addEventListener("click", function () {
-//   // alert("Works");
-// });
 

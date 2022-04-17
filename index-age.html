@@ -10,12 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="./style.css">
+    
     <title>Find My Brewery</title>
 </head>
 <body>
   <main>
-    <section class="container">
+    <section id="greeting" class="container">
       <h1 class="title">Find My Brewery</h1>
       <button class="button" id="enterBtn">ENTER</button>
     </section>
@@ -52,11 +54,17 @@
         <button id="access-close" class="modal-close is-large" aria-label="close"></button>
       </div>
      
+      <div id="search-box" class="is-hidden wrapper">
+        <input type="text" class="input" placeholder="what are you looking for?">
+        <div class="searchbtn">
+            <i class="fas fa-search"></i>
+        </div>
+      </div>
 
   </main>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   <script src="./assets/script.js"></script>
 
   <footer>Made in collaboration by: AJ Figueroa, Chris Ginn and Ben Smith</footer>
