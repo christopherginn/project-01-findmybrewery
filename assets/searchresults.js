@@ -29,6 +29,24 @@ if (city !== "" && type !== "") {
     })
     .then(function(data){
         console.log(data);
+        cityformat = city.split("%20");
+        // cityformat = cityformat.split(" ");
+        for (var i = 0; i < cityformat.length; i++){
+            cityformat[i] = cityformat[i][0].toUpperCase() + cityformat[i].substr(1);
+        }
+        cityformat = cityformat.join(" ");
+        console.log(cityformat)
+    
+        var div = document.createElement('div');
+        div.innerHTML = `
+        <div class=column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content"><p>Displaying ${data.length} result(s) for ${type}-type breweries in ${cityformat}, GA.</p></div>
+                </div>
+            </div>
+        </div>`
+        document.getElementById("brewery-display").appendChild(div);
         populateResults(data);
         
         
@@ -67,6 +85,7 @@ function typeFilter(data){
 }
 
 function populateResults(data){
+    
     for (var i = 0; i < data.length; i++){
     var div = document.createElement('div');
                 // div.classList = "";
@@ -90,7 +109,7 @@ function populateResults(data){
                     </div>
                     <footer class="card-footer">
                       <a href="#" class="card-footer-item" id="save-to-favorites">Save to Favorites</a>
-                      <a href="./googlemaptest.html?name=${data[i].name}" class="card-footer-item" id="get-directions">Get Directions</a>
+                      <a href="./ind_result.html?name=${data[i].name}" class="card-footer-item" id="get-directions">Get Directions</a>
                     </footer>
                   </div>
             </section>
