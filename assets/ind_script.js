@@ -17,7 +17,7 @@ fetch(`${baseUrl}?by_name=${nameCallback}`).then(function(response){
     var street = data[0].street.replaceAll(" ", "+");
     var address = [data[0].name,`${data[0].street}, ${data[0].city}, ${data[0].state}`.replaceAll(" ", "+")];
     console.log(address[1])
-
+    populateResults(data);
     geocodeAddress(address);
 });
 
@@ -55,3 +55,64 @@ function initMap(latlon) {
       animation: google.maps.Animation.DROP,
     });
 }
+
+function populateResults(data){
+    
+    var i = 0;
+    var div = document.createElement('div');
+                // div.classList = "";
+                div.innerHTML = `
+                <section class="column">
+                <!-- card to display the brewery search results -->
+                <div class="card">
+                    <header class="card-header">
+                    <p class="card-header-title" id="brewery-name">${data[i].name}</p>
+                    <div class="save card-header-icon" id="save-to-favorites" data-name="${data[i].name}">Save to Favorites</div>
+                    </header>
+                    <div class="card-content">
+                      <div class="content" id="brewery-info">
+                        
+                            Type: ${data[i].brewery_type}<br><br>
+                            Address: <br>${data[i].street}, ${data[i].city}, GA, ${data[i].postal_code}<br><br>
+                            Phone: ${data[i].phone}<br><br>
+                            Website: <a href="${data[i].website_url}">${data[i].website_url}</a>
+                        
+                        <br>
+                      </div>
+                    </div>
+                    <footer class="card-footer">
+                      <div class="card-footer-item" id="map"></div>
+                    </footer>
+                  </div>
+            </section>
+                    `
+    document.getElementById("brewery-display").appendChild(div);
+    
+    
+
+    var saveBtn = document.querySelectorAll(".save");
+
+        for (var i=0; i<saveBtn.length; i++){
+            saveBtn[i].addEventListener('click', function(evt){
+                var newFav = evt.target.getAttribute("data-name")
+                save(newFav);
+            });
+        }
+    
+};
+
+// function typeFilter(data){
+//     var filteredData = [];
+    
+//     for (var i = 0; i < data.length; i++) {
+//         var dataBreweryType = data[i].brewery_type;
+//         if (dataBreweryType === "micro" || dataBreweryType === "brewpub" || dataBreweryType === "regional"){
+//             filteredData.push(data[i])
+//         }
+//     }
+//     console.log(filteredData)
+    
+//     populateResults(filteredData);
+//     geocodeAddress(filteredData);
+//     return;
+// }

@@ -15,7 +15,7 @@
   <h1 class="title">Find My Brewery</h1>
     
         <section class="container column is-fluid">
-            <div class="column is-one-fifth"></div>
+            
             <!-- <nav class="navbar container column is-three-fifths">
                 <div class="navbar-menu">
                     <div>
@@ -42,7 +42,7 @@
                 <section class="column is-one-fifth">
                     <aside>
                         <section id="search-bar container">
-                            <h2 class="column is-full" id="search-title">Search:</h2>
+                            <h2 class="column is-full" id="search-title">Search</h2>
                             <form id="search-form">
                                 <input type="text" placeholder="Enter City..." id="city-input" class="column is-full form-control">
                                 <div class="select">
@@ -55,8 +55,9 @@
                                 </div>
                                 <button id="submitBtn" class="column is-full">Search</button>
                             </form>
-                            <button class="column is-full" id="clear-history">Clear History</button>
+                            <!-- <button class="column is-full" id="clear-history">Clear History</button> -->
                         </section>
+                        <h2 class="column is-full" id="search-title">Favorites</h2>
                         <section class="column is-full" id="button-container"></section>
                     </aside>
                 </section>
@@ -65,7 +66,7 @@
                         <section class="row container" id="brewery-display-title"></section>
                         <section class="row container" id="brewery-display">
                             <section class="column">
-                                <div id="map"></div>
+                                
                                 <!-- card to display the brewery search results -->
                                 <!-- <div class="card">
                                     <header class="card-header">
@@ -94,6 +95,7 @@
                                   </div> -->
                             </section>
                         </section>
+                        
                     </main>
                 </section>
             </section>
@@ -102,6 +104,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="./assets/search_searchresults.js"></script>
         <script src="./assets/ind_script.js"></script>
+        <script src="./assets/favorites.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNnCjPwllZ0K35IujZeR9a98MKnlG3xr0&callback=initMap&v=weekly" defer></script>
 </body>
 </html>

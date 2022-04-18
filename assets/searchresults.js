@@ -129,7 +129,7 @@ function populateResults(data){
                 <!-- card to display the brewery search results -->
                 <div class="card">
                     <header class="card-header">
-                      <p class="card-header-title" id="brewery-name">${data[i].name}</p>
+                    <p class="card-header-title" id="brewery-name">${data[i].name}</p>
                     </header>
                     <div class="card-content">
                       <div class="content" id="brewery-info">
@@ -144,7 +144,7 @@ function populateResults(data){
                     </div>
                     <footer class="card-footer">
                       <div class="card-footer-item save" id="save-to-favorites" data-name="${data[i].name}">Save to Favorites</div>
-                      <a href="./ind_result.html?name=${data[i].name}" class="card-footer-item" id="get-directions">Get Directions</a>
+                      <a href="./ind_result.html?name=${data[i].name}" class="card-footer-item" id="get-directions">See Map</a>
                     </footer>
                   </div>
             </section>
@@ -210,27 +210,26 @@ function viewFavs(){
         for (var i=0; i<deleteBtn.length; i++){
             deleteBtn[i].addEventListener('click', function(evt){
                 var value = evt.target.getAttribute("data-name");
-                lsdel(value);
+                del(value);
             })
         };
     }
 };
 
-function lsdel(value){
+function del(value){
 	if (localStorage.getItem('data') === null) { 
 		console.log("local storage not saved yet...");
 	} else {		
-		console.log("vikvik");
-		var ls_data = JSON.parse(localStorage.getItem('data'));
-		var index   = ls_data.indexOf(value);
+		var old_data = JSON.parse(localStorage.getItem('data'));
+		var index   = old_data.indexOf(value);
 		console.log("seçilen index:"+index);
 		if(index == -1){
 		// if not matched selected index	
 		} else {
 			// is matched, remove...
-			ls_data.splice(index, 1);
-			localStorage.setItem('data', JSON.stringify(ls_data));
-			console.log(ls_data);  
+			old_data.splice(index, 1);
+			localStorage.setItem('data', JSON.stringify(old_data));
+			// console.log(old_data);  
 			viewFavs();
 		}
 	}
