@@ -7,7 +7,7 @@
 }
 
 html {
-    background-image: url(https://cdn4.vectorstock.com/i/1000x1000/00/43/beer-paper-wood-background-vector-1630043.jpg);
+    background-image: url("./images/beer-background_3.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -15,8 +15,13 @@ html {
     /* height: 100%; */
 }
 
+.content p {
+    font-size: 14px;
+}
+
+
 .navbar {
-    background-color: goldenrod;
+    background-color: #ce7000;
 }
 
 .navbar-item {
@@ -28,7 +33,7 @@ button {
 }
 
 .card {
-    background-color: goldenrod;
+    background-color: #f7941d;
     color: black;
 }
 
@@ -43,6 +48,8 @@ button {
 #search-title {
     font-size: 30px;
     color: rgb(137, 228, 27);
+    font-family: 'Rubik Bubbles', cursive;
+    text-shadow: 5px 5px black;
 }
 #search-bar-container, input, #button-container button {
     margin-bottom: var(--spacing);
@@ -55,3 +62,52 @@ button {
 .hide {
     display: none;
 }
+aside{
+    position: sticky; top: 0;
+    background-color: #b36332;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 35px;
+}
+
+.title {
+    font-family: 'Rubik Bubbles', cursive;
+    font-size: 65px;
+    color: rgb(152, 199, 0);
+    text-shadow: 5px 5px black;
+    text-align: center;
+}
+
+.select{
+    margin-bottom: 5px;
+}
+
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 400px;
+    /* The width is the width of the web page */
+    
+  }
+
+  .favBtnObj {
+      background-color: #f7941d;
+      border-radius: 5px;
+      border-color: bisque;
+      border-width: 4px;
+  }
+
+  .favBtnObj:hover {
+      background-color: #ce7000;
+  }
+  /* .delete {
+      background-color: #ce7000;
+  } */
+
+
+
+
+
+
+
+  

@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    background-image: url(https://static.vecteezy.com/system/resources/previews/002/773/465/large_2x/celebration-of-beer-background-free-vector.jpg);
+    background-image: url("./assets/images/beer\ backbroud.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -47,3 +47,41 @@ footer {
     text-align: center;
     font-weight: bold;
   }
+
+  .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    max-width: 550px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.wrapper .input {
+    width: 85%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.searchbtn {
+    background: orange;
+    width: 10%;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.searchbtn .fas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
