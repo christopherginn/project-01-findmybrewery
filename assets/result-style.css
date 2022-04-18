@@ -89,3 +89,25 @@ aside{
     /* The width is the width of the web page */
     
   }
+
+  .favBtnObj {
+      background-color: #f7941d;
+      border-radius: 5px;
+      border-color: bisque;
+      border-width: 4px;
+  }
+
+  .favBtnObj:hover {
+      background-color: #ce7000;
+  }
+  /* .delete {
+      background-color: #ce7000;
+  } */
+
+
+
+
+
+
+
+  

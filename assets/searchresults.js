@@ -6,8 +6,9 @@ var googleAPIKey = "AIzaSyCNnCjPwllZ0K35IujZeR9a98MKnlG3xr0";
 // document.getElementById("back").addEventListener("click", function(){
 //     document.location.replace("./searchstart.html");
 // });
-
+viewFavs();
 urlString = document.location.search;
+
 var city = urlString.split("city=")[1].split("&")[0];
 console.log(city);
 var type = urlString.split("&type=")[1];
@@ -21,7 +22,10 @@ if (type === ""){
     console.log("No type")
 }
 
-
+if (urlString = "./result-index.html"){
+    console.log(urlString);
+    viewFavs();
+}
 
 if (city !== "" && type !== "") {
     fetch(`${baseUrl}&by_city=${city}&by_type=${type}`).then(function(response){
@@ -49,18 +53,6 @@ if (city !== "" && type !== "") {
         document.getElementById("brewery-display").appendChild(div);
         populateResults(data);
 
-
-        // saveBtn.forEach (save => {
-        //     save.addEventListener('click', function (evt){
-        //         console.log("save clicked", evt.target.getAttribute("data-name"));
-        //         var newFavorite = evt.target.getAttribute("data-name");
-        //     });
-        // });
-        
-
-        // saveBtn.addEventListener("click", function(event){
-        // console.log(event.target.getAttribute("data-name"))
-        // localStorage.setItem("favorite", event.target.getAttribute("data-name"));
     });
         
         
@@ -71,6 +63,23 @@ if (city !== "" && type !== "") {
     })
     .then(function(data){
         console.log(data);
+        cityformat = city.split("%20");
+        // cityformat = cityformat.split(" ");
+        for (var i = 0; i < cityformat.length; i++){
+            cityformat[i] = cityformat[i][0].toUpperCase() + cityformat[i].substr(1);
+        }
+        cityformat = cityformat.join(" ");
+
+        var div = document.createElement('div');
+        div.innerHTML = `
+        <div class=column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content"><p>Displaying ${data.length} result(s) for breweries in ${cityformat}, GA.</p></div>
+                </div>
+            </div>
+        </div>`
+        document.getElementById("brewery-display").appendChild(div);
         typeFilter(data);
         
     })
@@ -80,6 +89,17 @@ if (city !== "" && type !== "") {
     })
     .then(function(data){
         console.log(data);
+        var div = document.createElement('div');
+        div.innerHTML = `
+        <div class=column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content"><p>Displaying ${data.length} result(s) for ${type}-type breweries in Georgia.</p></div>
+                </div>
+            </div>
+        </div>`
+        document.getElementById("brewery-display").appendChild(div);
+
         populateResults(data);
     })
 }
@@ -94,6 +114,7 @@ function typeFilter(data){
         }
     }
     console.log(filteredData)
+    
     populateResults(filteredData);
     return;
 }
@@ -143,16 +164,6 @@ function populateResults(data){
     
 };
 
-// function save(newFavorite){
-
-//     if (localStorage.getItem('favorites') == null){
-//         localStorage.setItem('favorites', "[]");
-//     }
-
-//     var old_data = JSON.parse(localStorage.getItem('data'));
-//     old_data.push(newFavorite);
-// }
-
 function save(newFav){
     var newFavorite = newFav;
     if(localStorage.getItem('data') == null){
@@ -180,7 +191,10 @@ function viewFavs(){
             console.log(pullData[i])
             var div = document.createElement('div');
             div.innerHTML=`
-            <button class="column is-full favBtn" data-name="${pullData[i]}">${pullData[i]}</button>
+            <div class="favBtnObj columns is-vcentered is-full" data-name="${pullData[i]}">
+                <div class="column favBtn" data-name="${pullData[i]}">${pullData[i]}</div>
+                <div class="column is-1 delete" data-name="${pullData[i]}">X</div>
+            </div>
             `
             document.getElementById("button-container").appendChild(div);
         }
@@ -192,18 +206,32 @@ function viewFavs(){
             })
         };
 
+        var deleteBtn = document.querySelectorAll(".delete");
+        for (var i=0; i<deleteBtn.length; i++){
+            deleteBtn[i].addEventListener('click', function(evt){
+                var value = evt.target.getAttribute("data-name");
+                lsdel(value);
+            })
+        };
     }
 };
 
-function alreadySaved(){
-    var saveBtn = document.querySelectorAll(".save");
-    var old_data = JSON.parse(localStorage.getItem('data'));
-    for (var i=0; i<saveBtn.length; i++){
-        if (old_data.indexOf(saveBtn[i].getAttribute("data-name"))){
-            
-            saveBtn[i].textContent = "Already Saved";
-        }
-    }
-};
-viewFavs();
-alreadySaved();
+function lsdel(value){
+	if (localStorage.getItem('data') === null) { 
+		console.log("local storage not saved yet...");
+	} else {		
+		console.log("vikvik");
+		var ls_data = JSON.parse(localStorage.getItem('data'));
+		var index   = ls_data.indexOf(value);
+		console.log("seçilen index:"+index);
+		if(index == -1){
+		// if not matched selected index	
+		} else {
+			// is matched, remove...
+			ls_data.splice(index, 1);
+			localStorage.setItem('data', JSON.stringify(ls_data));
+			console.log(ls_data);  
+			viewFavs();
+		}
+	}
+}
