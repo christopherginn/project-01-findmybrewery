@@ -48,9 +48,23 @@ if (city !== "" && type !== "") {
         </div>`
         document.getElementById("brewery-display").appendChild(div);
         populateResults(data);
+
+
+        // saveBtn.forEach (save => {
+        //     save.addEventListener('click', function (evt){
+        //         console.log("save clicked", evt.target.getAttribute("data-name"));
+        //         var newFavorite = evt.target.getAttribute("data-name");
+        //     });
+        // });
+        
+
+        // saveBtn.addEventListener("click", function(event){
+        // console.log(event.target.getAttribute("data-name"))
+        // localStorage.setItem("favorite", event.target.getAttribute("data-name"));
+    });
         
         
-    })
+    
 } else if (city !== "" && type === ""){
     fetch(`${baseUrl}&by_city=${city}`).then(function(response){
         return response.json();
@@ -108,49 +122,88 @@ function populateResults(data){
                       </div>
                     </div>
                     <footer class="card-footer">
-                      <a href="#" class="card-footer-item" id="save-to-favorites">Save to Favorites</a>
+                      <div class="card-footer-item save" id="save-to-favorites" data-name="${data[i].name}">Save to Favorites</div>
                       <a href="./ind_result.html?name=${data[i].name}" class="card-footer-item" id="get-directions">Get Directions</a>
                     </footer>
                   </div>
             </section>
                     `
     document.getElementById("brewery-display").appendChild(div);
-    // gecodeAddress(data);
+    
+    }
+
+    var saveBtn = document.querySelectorAll(".save");
+
+        for (var i=0; i<saveBtn.length; i++){
+            saveBtn[i].addEventListener('click', function(evt){
+                var newFav = evt.target.getAttribute("data-name")
+                save(newFav);
+            });
+        }
+    
+};
+
+// function save(newFavorite){
+
+//     if (localStorage.getItem('favorites') == null){
+//         localStorage.setItem('favorites', "[]");
+//     }
+
+//     var old_data = JSON.parse(localStorage.getItem('data'));
+//     old_data.push(newFavorite);
+// }
+
+function save(newFav){
+    var newFavorite = newFav;
+    if(localStorage.getItem('data') == null){
+        localStorage.setItem('data', '[]');
+    }
+
+    var old_data = JSON.parse(localStorage.getItem('data'));
+    console.log(old_data);
+    if (old_data.indexOf(newFavorite) == -1){
+        old_data.push(newFavorite);
+        localStorage.setItem('data', JSON.stringify(old_data));
+        viewFavs();
+    }
+    console.log(old_data);
+    
+        
+};
+
+function viewFavs(){
+    document.getElementById("button-container").innerHTML = "";
+    if (localStorage.getItem('data') != null){
+        var pullData = JSON.parse(localStorage.getItem('data'));
+        
+        for (var i=0; i< pullData.length; i++){
+            console.log(pullData[i])
+            var div = document.createElement('div');
+            div.innerHTML=`
+            <button class="column is-full favBtn" data-name="${pullData[i]}">${pullData[i]}</button>
+            `
+            document.getElementById("button-container").appendChild(div);
+        }
+
+        var favBtn = document.querySelectorAll(".favBtn");
+        for (var i=0; i<favBtn.length; i++){
+            favBtn[i].addEventListener('click', function(evt){
+                 document.location = (`./ind_result.html?name=${evt.target.getAttribute("data-name")}`)
+            })
+        };
+
     }
 };
 
-// function gecodeAddress(data){
-//     for (var i =0; i < data.length; i++){
-//         var address = `${data[i].street}, ${data[i].city}, ${data[i].state}`.replaceAll(" ", "+");
-        
-//         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${googleAPIKey}`).then(function(response){
-//             return response.json();
-//           })
-//           .then(function(data){
-//             console.log(data)
-//             var lat = Number(data.results[i].geometry.location.lat);
-//             var lon = Number(data.results[i].geometry.location.lng);
-//             var name = data[i].name;
-//             var latlon = [lat, lon, name];
-//             console.log(latlon);
-//             // console.log(lat + typeof lat)
-//             console.log("geocode address reults: "+latlon)
-//             initMap(latlon);
-//           });
-//     }
-// };
-
-// function initMap(latlon) {
-//     latlonFormatted = { lat: Number(latlon[0]), lng: Number(latlon[1]) };
-//     const map = new google.maps.Map(document.getElementById("map"), {
-//       zoom: 16,
-//       center: latlonFormatted,
-//     });
-    
-//     const marker = new google.maps.Marker({
-//       position: latlonFormatted,
-//       map: map,
-//       label: latlon[2],
-//       animation: google.maps.Animation.DROP,
-//     });
-// }
+function alreadySaved(){
+    var saveBtn = document.querySelectorAll(".save");
+    var old_data = JSON.parse(localStorage.getItem('data'));
+    for (var i=0; i<saveBtn.length; i++){
+        if (old_data.indexOf(saveBtn[i].getAttribute("data-name"))){
+            
+            saveBtn[i].textContent = "Already Saved";
+        }
+    }
+};
+viewFavs();
+alreadySaved();
