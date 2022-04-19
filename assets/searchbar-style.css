@@ -70,7 +70,9 @@ body {
      font-family: sans-serif, Arial;
      font-size: 16px;
      border: 2px solid #444;
-     border-radius: 4px;
+     height: 40px;
+     text-align: center;
+     border-radius: 100px;
  }
 .type-options input[type="radio"]:checked + label {
      background-color:#bfb;
