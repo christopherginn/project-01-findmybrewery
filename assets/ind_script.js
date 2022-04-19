@@ -76,7 +76,7 @@ function populateResults(data){
                     <div class="card-content">
                       <div class="content" id="brewery-info">
                         
-                            Type: ${data[i].brewery_type}<br><br>
+                            Type:<span class="is-capitalized"> ${data[i].brewery_type}</span><br><br>
                             Address: <br>${data[i].street}, ${data[i].city}, GA, ${data[i].postal_code}<br><br>
                             Phone: ${phoneFormat(phone)}<br><br>
                             Website: <a href="${data[i].website_url}">${data[i].website_url}</a>
@@ -121,6 +121,8 @@ function populateResults(data){
 //     return;
 // }
 
+
+//format phone numbers to have dashes
 function phoneFormat(phone){
     phone = phone.slice(0,3)+"-"+phone.slice(3,6)+"-"+phone.slice(6,15);
     return phone;
