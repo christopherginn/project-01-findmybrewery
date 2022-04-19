@@ -28,33 +28,49 @@ function viewFavModal(){
     if (localStorage.getItem('data') != null){
         var pullData = JSON.parse(localStorage.getItem('data'));
         
-        for (var i=0; i< pullData.length; i++){
-            console.log(pullData[i])
+        if (pullData.length >= 1) {
+
+            for (var i=0; i< pullData.length; i++){
+                console.log(pullData[i])
+                var div = document.createElement('div');
+                div.innerHTML=`
+                
+                <li><div class="field is-grouped"><div class="favBtn button fav-color is-half" data-name="${pullData[i]}">${pullData[i]}<button class="delete" data-name="${pullData[i]}">X</button></div></div></li>
+                <br>
+                </div>
+                `
+                document.getElementById("favlist").appendChild(div);
+            }
+
+            var favBtn = document.querySelectorAll(".favBtn");
+            for (var i=0; i<favBtn.length; i++){
+                favBtn[i].addEventListener('click', function(evt){
+                    document.location = (`./ind_result.html?name=${evt.target.getAttribute("data-name")}`)
+                })
+            };
+
+            var deleteBtn = document.querySelectorAll(".delete");
+            for (var i=0; i<deleteBtn.length; i++){
+                deleteBtn[i].addEventListener('click', function(evt){
+                    evt.preventDefault();
+                    evt.stopPropagation();
+                    var value = evt.target.getAttribute("data-name");
+                    delModal(value);
+                })
+            };
+        } else {
+            console.log("nothing saved");
             var div = document.createElement('div');
-            div.innerHTML=`
-            
-              <div class="favBtn is-half" data-name="${pullData[i]}">${pullData[i]} <button class="delete" data-name="${pullData[i]}">X</button></div>
-              <br>
-            </div>
-            `
+            div.innerHTML=`<li><p>No breweries saved to favorites</p></li>`
             document.getElementById("favlist").appendChild(div);
         }
-
-        var favBtn = document.querySelectorAll(".favBtn");
-        for (var i=0; i<favBtn.length; i++){
-            favBtn[i].addEventListener('click', function(evt){
-                 document.location = (`./ind_result.html?name=${evt.target.getAttribute("data-name")}`)
-            })
-        };
-
-        var deleteBtn = document.querySelectorAll(".delete");
-        for (var i=0; i<deleteBtn.length; i++){
-            deleteBtn[i].addEventListener('click', function(evt){
-                evt.preventDefault();
-                var value = evt.target.getAttribute("data-name");
-                delModal(value);
-            })
-        };
+    
+    
+    } else {
+        console.log("nothing saved");
+        var div = document.createElement('div');
+        div.innerHTML=`<li><p>No breweries saved to favorites</p></li>`
+        document.getElementById("favlist").appendChild(div);
     }
 };
 
@@ -72,7 +88,7 @@ function delModal(value){
 			old_data.splice(index, 1);
 			localStorage.setItem('data', JSON.stringify(old_data));
 			// console.log(old_data);  
-			// viewFavModal();
+			viewFavModal();
 		}
 	}
 }

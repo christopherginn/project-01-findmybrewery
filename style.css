@@ -86,3 +86,28 @@ footer {
     transform: translate(-50%, -50%);
     font-size: 18px;
 }
+
+.modal-card-head {
+    background-color: #e1b183;
+    text-align: center;
+}
+
+.modal-card-body {
+  background-color: #ffebd0;
+  text-align: center;
+}
+
+.modal-card-foot {
+    background-color: #e1b183;
+    text-align: center;
+}
+
+.modal-card-foot button{
+    background-color: #e1b183;
+    text-align: center;
+    padding: 10px;
+}
+
+.modal-card {
+    width: 660px;
+}
