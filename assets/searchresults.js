@@ -124,7 +124,8 @@ function populateResults(data){
     for (var i = 0; i < data.length; i++){
     var div = document.createElement('div');
     var phone = data[i].phone
-                // div.classList = "";
+    phone = phoneFormat(phone);
+                div.classList = "";
                 div.innerHTML = `
                 <section class="column">
                 <!-- card to display the brewery search results -->
@@ -136,9 +137,9 @@ function populateResults(data){
                     <div class="card-content">
                       <div class="content" id="brewery-info">
                         
-                            Type: ${data[i].brewery_type}<br><br>
-                            Address: ${data[i].street}, ${data[i].city}, GA, ${data[i].postal_code}<br><br>
-                            Phone: ${phoneFormat(phone)}<br><br>
+                            Type:<span class="is-capitalized"> ${data[i].brewery_type}</span><br><br>
+                            Address: <br>${data[i].street}, ${data[i].city}, GA, ${data[i].postal_code}<br><br>
+                            Phone: ${phone}<br><br>
                             Website: <a href="${data[i].website_url}">${data[i].website_url}</a>
                         
                         <br>
@@ -162,7 +163,7 @@ function populateResults(data){
                 var newFav = evt.target.getAttribute("data-name")
                 save(newFav);
             });
-        }
+        };
     
 };
 
@@ -235,9 +236,14 @@ function del(value){
 			viewFavs();
 		}
 	}
-}
+};
 
 function phoneFormat(phone){
+    if (phone != null){
     phone = phone.slice(0,3)+"-"+phone.slice(3,6)+"-"+phone.slice(6,15);
+    } else {
+        phone = "N/A"
+    }
+
     return phone;
 };
