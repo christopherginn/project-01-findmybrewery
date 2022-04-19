@@ -113,6 +113,7 @@ aside{
       border-radius: 5px;
       border-color: bisque;
       border-width: 4px;
+      cursor: pointer;
   }
 
   .favBtnObj:hover {
@@ -125,13 +126,20 @@ aside{
   #small-navbar {
       display: none;
       text-align: center;
+      background-color: #ffebd0;
+      margin-top: 10px;
   }
 
   #small-navbar .button {
     font-family: 'Rubik Bubbles', cursive;
     margin: 5px;
     width: 30%;
+    background-color: #e1b183;
 
+  }
+
+  #small-navbar .button:hover {
+      background-color: #ce7000;
   }
 
   .modal-card-head {
@@ -155,6 +163,12 @@ aside{
   .delete {
       margin-left: 5px;
   }
+
+  .mar {
+    margin-left: 8px;
+  }
+
+
 
   @media screen and (max-width: 768px) {
     body {
