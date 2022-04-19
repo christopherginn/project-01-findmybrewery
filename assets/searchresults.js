@@ -44,7 +44,7 @@ if (city !== "" && type !== "") {
         var div = document.createElement('div');
         div.innerHTML = `
         <div class=column">
-            <div class="card">
+            <div class="card bg-result">
                 <div class="card-content">
                     <div class="content"><p>Displaying ${data.length} result(s) for ${type}-type breweries in ${cityformat}, GA.</p></div>
                 </div>
@@ -73,7 +73,7 @@ if (city !== "" && type !== "") {
         var div = document.createElement('div');
         div.innerHTML = `
         <div class=column">
-            <div class="card">
+            <div class="card bg-result">
                 <div class="card-content">
                     <div class="content"><p>Displaying ${data.length} result(s) for breweries in ${cityformat}, GA.</p></div>
                 </div>
@@ -92,7 +92,7 @@ if (city !== "" && type !== "") {
         var div = document.createElement('div');
         div.innerHTML = `
         <div class=column">
-            <div class="card">
+            <div class="card bg-result">
                 <div class="card-content">
                     <div class="content"><p>Displaying ${data.length} result(s) for ${type}-type breweries in Georgia.</p></div>
                 </div>
