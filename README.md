@@ -27,4 +27,8 @@ In collaboration by: AJ Figueroa, Chris Ginn and Ben Smith.
 
 ## Deployment
 
+Click [here]() to visit deployed page.
+
 ## Mock-Up
+
+![Beer glasses and bottle over an orange/brown background with wheat accents and a button to enter site, image changes to an age input screen and then to the main search area.](/assets/images/mockup.gif)
