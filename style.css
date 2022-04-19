@@ -63,6 +63,10 @@ footer {
     border-radius: 5px;
 }
 
+#enterBtn:hover {
+    background-color: #e1b183;
+}
+
 .wrapper .input {
     width: 85%;
     padding: 15px 20px;
