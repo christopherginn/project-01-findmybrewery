@@ -146,7 +146,7 @@ function populateResults(data){
                       </div>
                     </div>
                     <footer class="card-footer">
-                      <div class="card-footer-item save" id="save-to-favorites" data-name="${data[i].name}">Save to Favorites<i class="fas fa-bookmark mar"></i></div>
+                      <div class="card-footer-item save" id="save-to-favorites" data-name="${data[i].name}">Save to Favorites<i class="fas fa-bookmark mar" data-name="${data[i].name}"></i></div>
                       <a href="./ind_result.html?name=${data[i].name}" class="card-footer-item" id="get-directions">See Location</a>
                     </footer>
                   </div>
