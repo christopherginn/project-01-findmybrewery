@@ -132,7 +132,7 @@ function populateResults(data){
                 <div class="card">
                     <header class="card-header">
                     <p class="card-header-title" id="brewery-name">${data[i].name}</p>
-                    <div class="card-header-icon" id="save-to-favorites"><img width="40" height="32" src="./assets/images/beer_icon.png" /></div>
+                    <div class="card-header-icon" id="save-to-favorites"><img width="40" height="32" src="./assets/stylesheets/images/beer_icon.png" /></div>
                     </header>
                     <div class="card-content">
                       <div class="content" id="brewery-info">

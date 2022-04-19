@@ -12,7 +12,6 @@ html {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    /* height: 100%; */
 }
 
 .content p {
@@ -45,12 +44,17 @@ button {
     border: 1px solid gray;
 }
 
+#clear-history {
+    margin: 5px 0px;
+}
+
 #search-title {
     font-size: 30px;
     color: rgb(137, 228, 27);
     font-family: 'Rubik Bubbles', cursive;
     text-shadow: 5px 5px black;
 }
+
 #search-bar-container, input, #button-container button {
     margin-bottom: var(--spacing);
 }
@@ -104,11 +108,10 @@ aside{
     /* The height is 400 pixels */
     width: 400px;
     /* The width is the width of the web page */
-    border-radius: 5px;
+    
+}
 
-  }
-
-  .favBtnObj {
+.favBtnObj {
       background-color: #f7941d;
       border-radius: 5px;
       border-color: bisque;
@@ -116,12 +119,13 @@ aside{
       cursor: pointer;
   }
 
-  .favBtnObj:hover {
+
+.favBtnObj:hover {
       background-color: #ce7000;
-  }
-  /* .delete {
-      background-color: #ce7000;
-  } */
+}
+/* .delete {
+   background-color: #ce7000;
+} */
 
   #small-navbar {
       display: none;
@@ -171,7 +175,7 @@ aside{
 
 
   @media screen and (max-width: 768px) {
-    body {
+    html {
       background-color: #e1b183;
       background-image: url("./images/background-mobile-2.jpg");
       background-repeat: no-repeat;
