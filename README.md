@@ -33,3 +33,8 @@ Click [here](https://christopherginn.github.io/project-01-findmybrewery/) to vie
 
 ![Find My Brewery entry page, with orange background with wheat accents and beer glasses, changes screen to the age input screen and then to search area.](/assets/images/mockup.gif)
 Click [here]() to visit deployed page.
+
+## Credits
+Background image on index.html and modified for all child pages is from vectorstock.com/, [here](https://cdn4.vectorstock.com/i/1000x1000/00/43/beer-paper-wood-background-vector-1630043.jpg)
+
+Beer mug icon used on search result cards is from pinclipart.com [here](https://www.pinclipart.com/downpngs/hJwxww_beer-mug-vector-by-checonx-clipart/)
