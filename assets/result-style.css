@@ -111,6 +111,11 @@ aside{
     
 }
 
+.bg-result {
+    background-color: #b36332;
+    color: #fff;
+    font-weight: bolder;
+}
 
 .favBtnObj {
       background-color: #f7941d;
@@ -172,6 +177,19 @@ aside{
   .mar {
     margin-left: 8px;
   }
+
+  .card-header{
+      background-color: #ce7000;
+  }
+
+  .card:hover {
+      border-width: 2px;
+      border-color: #fff;
+  }
+
+  /* .card-content{
+      background-color: #e1b183;
+  } */
 
 
 
