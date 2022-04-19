@@ -32,6 +32,10 @@
                         <section id="search-bar container">
                             <h2 class="column is-full" id="search-title">Search</h2>
                             <form id="search-form">
+                                <input type="text" placeholder="Enter City..." id="search-input" class="column is-one-third form-control">
+                                <button class= "column is-one-third" id="search-btn">Search</button>
+                            </form>
+                            <button class="column is-one-third" id="clear-history">Clear History</button>
                                 <input type="text" placeholder="Enter City..." id="city-input" class="column is-full form-control">
                                 <div class="select">
                                   <select id="type-options">
@@ -51,6 +55,10 @@
                 </section>
                 <section class="column is-two-fifths">
                     <main>
+                        <section class="row container" id="brewery-display">
+                            <section class="column">
+                                <!-- card to display the brewery search results -->
+                                <div class="card  hide column is-half">
                         <section class="row container" id="brewery-display-title"></section>
                         <section class="row container" id="brewery-display">
                             <section class="column">
@@ -62,6 +70,16 @@
                                     </header>
                                     <div class="card-content">
                                       <div class="content" id="brewery-info">
+                                        
+                                             Type:
+                                            <p id="brewery-type"></p><br><br>
+                                            Address:
+                                            <p id="brewery-adress"></p><br><br>
+                                            Phone:
+                                            <p id="brewery-phone"></p><br><br>
+                                            Website:
+                                            <p id="brewery-website"></p> -->
+                                        
                                        
                                         Type:
                                         <p id="brewery-type"></p>
