@@ -147,7 +147,7 @@ function populateResults(data){
                     </div>
                     <footer class="card-footer">
                       <div class="card-footer-item save" id="save-to-favorites" data-name="${data[i].name}">Save to Favorites</div>
-                      <a href="./ind_result.html?name=${data[i].name}" class="card-footer-item" id="get-directions">See Map</a>
+                      <a href="./ind_result.html?name=${data[i].name}" class="card-footer-item" id="get-directions">See Location</a>
                     </footer>
                   </div>
             </section>
@@ -190,33 +190,45 @@ function viewFavs(){
     if (localStorage.getItem('data') != null){
         var pullData = JSON.parse(localStorage.getItem('data'));
         
-        for (var i=0; i< pullData.length; i++){
-            console.log(pullData[i])
+        if (pullData.length >= 1){
+
+            
+            for (var i=0; i< pullData.length; i++){
+                console.log(pullData[i])
+                var div = document.createElement('div');
+                div.innerHTML=`
+                <div class="favBtnObj columns is-vcentered is-full" data-name="${pullData[i]}">
+                    <div class="column favBtn" data-name="${pullData[i]}">${pullData[i]}</div>
+                    <div class="column is-1 delete" data-name="${pullData[i]}">X</div>
+                </div>
+                `
+                document.getElementById("button-container").appendChild(div);
+            }
+
+            var favBtn = document.querySelectorAll(".favBtn");
+            for (var i=0; i<favBtn.length; i++){
+                favBtn[i].addEventListener('click', function(evt){
+                    document.location = (`./ind_result.html?name=${evt.target.getAttribute("data-name")}`)
+                })
+            };
+
+            var deleteBtn = document.querySelectorAll(".delete");
+            for (var i=0; i<deleteBtn.length; i++){
+                deleteBtn[i].addEventListener('click', function(evt){
+                    var value = evt.target.getAttribute("data-name");
+                    del(value);
+                })
+            };
+        } else {
             var div = document.createElement('div');
-            div.innerHTML=`
-            <div class="favBtnObj columns is-vcentered is-full" data-name="${pullData[i]}">
-                <div class="column favBtn" data-name="${pullData[i]}">${pullData[i]}</div>
-                <div class="column is-1 delete" data-name="${pullData[i]}">X</div>
-            </div>
-            `
+            div.innerHTML=`<p>No breweries saved to favorites</p>`
             document.getElementById("button-container").appendChild(div);
         }
-
-        var favBtn = document.querySelectorAll(".favBtn");
-        for (var i=0; i<favBtn.length; i++){
-            favBtn[i].addEventListener('click', function(evt){
-                 document.location = (`./ind_result.html?name=${evt.target.getAttribute("data-name")}`)
-            })
-        };
-
-        var deleteBtn = document.querySelectorAll(".delete");
-        for (var i=0; i<deleteBtn.length; i++){
-            deleteBtn[i].addEventListener('click', function(evt){
-                var value = evt.target.getAttribute("data-name");
-                del(value);
-            })
-        };
-    }
+    } else {
+        var div = document.createElement('div');
+        div.innerHTML=`<p>No breweries saved to favorites</p>`
+        document.getElementById("button-container").appendChild(div);
+    };
 };
 
 function del(value){

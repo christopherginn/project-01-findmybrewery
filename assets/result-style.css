@@ -134,6 +134,28 @@ aside{
 
   }
 
+  .modal-card-head {
+      background-color: #e1b183;
+  }
+
+  .modal-card-body {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #ffebd0;
+  }
+
+  .fav-color {
+      background-color: #e1b183;
+  }
+
+  .fav-color:hover {
+      background-color: #ce7000;
+  }
+
+  .delete {
+      margin-left: 5px;
+  }
+
   @media screen and (max-width: 768px) {
     body {
       background-color: #e1b183;
