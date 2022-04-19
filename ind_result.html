@@ -6,40 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="stylesheet" href="assets/result-style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     
     <title>🍻Find My Brewery</title>
 </head>
 <body>
-  <h1 class="title">Find My Brewery</h1>
-    
+    <div id="title-div">
+        <h1 class="title is-size-1-tablet is-size-2-mobile">Find My Brewery</h1>
+        <h4 class="subtitle is-5">A Georgia Brewery Directory</h4>
+    </div>
+
+    <div id="small-navbar">
+        <button id="search-page" class="button">Back to Search</button>
+        <button id="show-favorites" class="button">See Favorites</button>
+    </div>
+
         <section class="container column is-fluid">
             
-            <!-- <nav class="navbar container column is-three-fifths">
-                <div class="navbar-menu">
-                    <div>
-                        
-                        <form class="field is-horizontal">
-                            <h2 id="search-title" class="column">Search:</h2>
-                            <input type="text" placeholder="Enter City..." id="city-input" class="input column is-vcentered form-control">
-                            <div class="select column is-vcentered">
-                                <select id="type-options" class="input">
-                                    <option value="" disabled selected hidden>Select brewery type</option>
-                                    <option id="typechoice-micro" name="type" value="micro">Micro</option>
-                                    <option id="typechoice-brewpub" name="type" value="brewpub">Brewpub</option>
-                                    <option id="typechoice-regional" name="type" value="regional">Regional</option>
-                                </select>
-                            </div>
-                            <button id="submitBtn" class="column">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </nav> -->
 
-            <section class="columns">
-              <section class="column is-one-fifth"></section>
-                <section class="column is-one-fifth">
+            <section class="columns is-centered">
+                <section id="filler" class="column is-one-fifth">
                     <aside>
                         <section id="search-bar container">
                             <h2 class="column is-full" id="search-title">Search</h2>
@@ -63,9 +51,9 @@
                 </section>
                 <section class="column is-two-fifths">
                     <main>
-                        <section class="row container" id="brewery-display-title"></section>
-                        <section class="row container" id="brewery-display">
-                            <section class="column">
+                        <section class="container" id="brewery-display-title"></section>
+                        <section class="container" id="brewery-display">
+                            <!-- <section class="column"> -->
                                 
                                 <!-- card to display the brewery search results -->
                                 <!-- <div class="card">
@@ -93,8 +81,25 @@
                                       <a href="#" class="card-footer-item" id="get-directions">Get Directions</a>
                                     </footer>
                                   </div> -->
-                            </section>
+                            <!-- </section> -->
                         </section>
+
+                        <div class="modal" id="fav-modal">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                              <header class="modal-card-head">
+                                <p class="modal-card-title">Modal title</p>
+                                <button class="delete" aria-label="close" id="close-modal"></button>
+                              </header>
+                              <section class="modal-card-body" id="favlist">
+                                <!-- Content ... -->
+                              </section>
+                              <footer class="modal-card-foot">
+                                <button class="button is-success">Save changes</button>
+                                <button id="cancel-button" class="button">Cancel</button>
+                              </footer>
+                            </div>
+                          </div>
                         
                     </main>
                 </section>
@@ -105,6 +110,7 @@
         <script src="./assets/search_searchresults.js"></script>
         <script src="./assets/ind_script.js"></script>
         <script src="./assets/favorites.js"></script>
+        <script src="./assets/favorites_modal.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNnCjPwllZ0K35IujZeR9a98MKnlG3xr0&callback=initMap&v=weekly" defer></script>
 </body>
 </html>

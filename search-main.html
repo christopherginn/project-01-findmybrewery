@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="./assets/search-main.css">
+    <title>Find My Brewery - Search</title>
+</head>
+<body>
+    <div id="title-div">
+        <h1 class="title is-size-1-tablet is-size-2-mobile">Find My Brewery</h1>
+        <h4 class="subtitle is-5">A Georgia Brewery Directory</h4>
+    </div>
+    <br>
+    <div class="container is-fluid">
+        <div class="columns is-flex is-vcentered is-centered">
+            <form class="search" id="search-form">
+                <div class="field-label is-large">
+                    <label class="label">Search for breweries by <span>city</span>, by <span>type</span>, or <span>both!</span></label>
+                </div>
+                
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                        <input class="input" type="text" id="city-input" placeholder="Enter a Georgia city here">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="field is-grouped type-options">
+                    <input type="radio" class="column" id="typechoice-micro" name="type" value="micro">
+                    <label for="typechoice-micro">Micro</label>
+                    <input type="radio" class="column" id="typechoice-regional" name="type" value="regional">
+                    <label for="typechoice-regional">Regional</label>
+                    <input type="radio" class="column" id="typechoice-brewpub" name="type" value="brewpub">
+                    <label for="typechoice-brewpub">Brewpub</label>
+                </div>
+
+                <div class="">
+                    <button id="submitBtn" class="searchbtn" value="Submit">
+                    <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./assets/search.js"></script>
+</body>
+</html>
