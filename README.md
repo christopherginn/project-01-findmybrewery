@@ -2,7 +2,7 @@
 
 ## Description
 
-We have worked together to develop a web page to help tourists and locals find their way to the nearest brewery in the city of their choice in Georgia. This page is easily accessible and interactive. It displays color images of breweries when you search them along with their information, including address and operating hours. The page also features a weather display for the city you are searching for. When you click on the 'Enter' button, you will be prompted to submit your date of birth for age verification. Since this is a page involving alcoholic beverages, you must be 18 years or older to be able to access it. Once, inside you will be prompted to search for the city of your choice and when you click search, then you will be presented with the breweries available to you along with the weather to help you plan your day.🍻
+We have worked together to develop a web page to help tourists and locals find their way to the nearest brewery in the city of their choice in Georgia. This page is easily accessible and interactive. It displays color images of breweries when you search them along with their information, including address and operating hours. When you click on the 'Enter' button, you will be prompted to submit your date of birth for age verification. Since this is a page involving alcoholic beverages, you must be 21 years or older to be able to access it. Once, inside you will be prompted to search for the city of your choice and when you click search, then you will be presented with the breweries available to you.🍻
 
 ## Purpose
 
@@ -27,8 +27,9 @@ In collaboration by: AJ Figueroa, Chris Ginn and Ben Smith.
 
 ## Deployment
 
-Click [here]() to visit deployed page.
+Click [here](https://christopherginn.github.io/project-01-findmybrewery/) to view our web page.
 
 ## Mock-Up
 
-![Beer glasses and bottle over an orange/brown background with wheat accents and a button to enter site, image changes to an age input screen and then to the main search area.](/assets/images/mockup.gif)
+![Find My Brewery entry page, with orange background with wheat accents and beer glasses, changes screen to the age input screen and then to search area.](/assets/images/mockup.gif)
+Click [here]() to visit deployed page.
