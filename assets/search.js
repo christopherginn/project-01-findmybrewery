@@ -25,7 +25,9 @@ submitBtn.addEventListener("click", function (event){
     
 
     if (!getSelectedType && !getCityInput) {
-        alert("Not enough info")
+        var div = document.createElement('div');
+        div.innerHTML=`<p style="color:red; text-align:center">Not enough info. You must enter at least a city name or brewery type.</p>`;
+        document.getElementById("search-form").appendChild(div);
     } else if (getCityInput && !getSelectedType) {
         document.location.replace(`./result-index.html?city=${getCityInput}&type=`)
 

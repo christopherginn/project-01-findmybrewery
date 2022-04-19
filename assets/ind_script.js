@@ -57,9 +57,13 @@ function initMap(latlon) {
 }
 
 function populateResults(data){
-    
+    // var formatPhone = data[i].phone.split("");
+
+
+
     var i = 0;
     var div = document.createElement('div');
+    var phone = data[i].phone
                 // div.classList = "";
                 div.innerHTML = `
                 <section class="column">
@@ -67,20 +71,20 @@ function populateResults(data){
                 <div class="card">
                     <header class="card-header">
                     <p class="card-header-title" id="brewery-name">${data[i].name}</p>
-                    <div class="save card-header-icon" id="save-to-favorites" data-name="${data[i].name}">Save to Favorites</div>
+                    <div class="card-header-icon" id="save-to-favorites"><i class="fas fa-bookmark save" data-name="${data[i].name}"></i></div>
                     </header>
                     <div class="card-content">
                       <div class="content" id="brewery-info">
                         
                             Type: ${data[i].brewery_type}<br><br>
                             Address: <br>${data[i].street}, ${data[i].city}, GA, ${data[i].postal_code}<br><br>
-                            Phone: ${data[i].phone}<br><br>
+                            Phone: ${phoneFormat(phone)}<br><br>
                             Website: <a href="${data[i].website_url}">${data[i].website_url}</a>
                         
                         <br>
                       </div>
                     </div>
-                    <footer class="card-footer">
+                    <footer class="card-footer" style="padding:10px;">
                       <div class="card-footer-item" id="map"></div>
                     </footer>
                   </div>
@@ -116,3 +120,8 @@ function populateResults(data){
 //     geocodeAddress(filteredData);
 //     return;
 // }
+
+function phoneFormat(phone){
+    phone = phone.slice(0,3)+"-"+phone.slice(3,6)+"-"+phone.slice(6,15);
+    return phone;
+};

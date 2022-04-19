@@ -28,7 +28,7 @@ if (urlString = "./result-index.html"){
 }
 
 if (city !== "" && type !== "") {
-    fetch(`${baseUrl}&by_city=${city}&by_type=${type}`).then(function(response){
+    fetch(`${baseUrl}&by_city=${city}&by_type=${type}&per_page=50`).then(function(response){
         return response.json();
     })
     .then(function(data){
@@ -58,7 +58,7 @@ if (city !== "" && type !== "") {
         
     
 } else if (city !== "" && type === ""){
-    fetch(`${baseUrl}&by_city=${city}`).then(function(response){
+    fetch(`${baseUrl}&by_city=${city}&per_page=50`).then(function(response){
         return response.json();
     })
     .then(function(data){
@@ -84,7 +84,7 @@ if (city !== "" && type !== "") {
         
     })
 } else if (city === "" && type !== ""){
-    fetch(`${baseUrl}&by_type=${type}`).then(function(response){
+    fetch(`${baseUrl}&by_type=${type}&per_page=50`).then(function(response){
         return response.json();
     })
     .then(function(data){
@@ -123,6 +123,7 @@ function populateResults(data){
     
     for (var i = 0; i < data.length; i++){
     var div = document.createElement('div');
+    var phone = data[i].phone
                 // div.classList = "";
                 div.innerHTML = `
                 <section class="column">
@@ -130,13 +131,14 @@ function populateResults(data){
                 <div class="card">
                     <header class="card-header">
                     <p class="card-header-title" id="brewery-name">${data[i].name}</p>
+                    <div class="card-header-icon" id="save-to-favorites"><img width="40" height="32" src="./assets/images/beer_icon.png" /></div>
                     </header>
                     <div class="card-content">
                       <div class="content" id="brewery-info">
                         
                             Type: ${data[i].brewery_type}<br><br>
                             Address: ${data[i].street}, ${data[i].city}, GA, ${data[i].postal_code}<br><br>
-                            Phone: ${data[i].phone}<br><br>
+                            Phone: ${phoneFormat(phone)}<br><br>
                             Website: <a href="${data[i].website_url}">${data[i].website_url}</a>
                         
                         <br>
@@ -234,3 +236,8 @@ function del(value){
 		}
 	}
 }
+
+function phoneFormat(phone){
+    phone = phone.slice(0,3)+"-"+phone.slice(3,6)+"-"+phone.slice(6,15);
+    return phone;
+};
