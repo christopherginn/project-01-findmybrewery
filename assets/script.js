@@ -54,7 +54,7 @@ submitBtn.on("click", function(){
     })
     
   } else if (diff >= 21){
-    document.location.replace("./index-searchbar.html");
+    document.location.replace("./search-main.html");
   
   }
 

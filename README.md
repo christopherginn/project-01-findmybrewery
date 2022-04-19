@@ -32,3 +32,4 @@ Click [here](https://christopherginn.github.io/project-01-findmybrewery/) to vie
 ## Mock-Up
 
 ![Find My Brewery entry page, with orange background with wheat accents and beer glasses, changes screen to the age input screen and then to search area.](/assets/images/mockup.gif)
+Click [here]() to visit deployed page.

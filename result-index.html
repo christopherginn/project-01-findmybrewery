@@ -14,18 +14,20 @@
     <title>🍻Find My Brewery</title>
 </head>
 <body>
-  <h1 class="title">Find My Brewery</h1>
-    <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item">
-            Favorites
-          </a>
-        </div>
-      </nav>    -->
+  
+  <div id="title-div">
+    <h1 class="title is-size-1-tablet is-size-2-mobile">Find My Brewery</h1>
+    <h4 class="subtitle is-5">A Georgia Brewery Directory</h4>
+  </div>
+    <div id="small-navbar">
+      <button id="search-page" class="button">Back to Search</button>
+      <button id="show-favorites" class="button">See Favorites</button>
+    </div>
+      
         <section class="container is-fluid">
-            <section class="columns">
-              <section class="column is-one-fifth"></section>
-                <section class="column is-one-fifth">
+            <section class="columns is-centered">
+              
+                <section id="filler" class="column is-one-fifth">
                     <aside>
                         <section id="search-bar container">
                             <h2 class="column is-full" id="search-title">Search</h2>
@@ -102,8 +104,27 @@
                 </section>
             </section>
         </section>
+
+        <div class="modal" id="fav-modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button class="delete" aria-label="close" id="close-modal"></button>
+              </header>
+              <section class="modal-card-body" id="favlist">
+                                <!-- Content ... -->
+              </section>
+              <footer class="modal-card-foot">
+                <button class="button is-success">Save changes</button>
+                <button id="cancel-button" class="button">Cancel</button>
+              </footer>
+            </div>
+        </div>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="./assets/search_searchresults.js"></script>
         <script src="./assets/searchresults.js"></script>
+        <script src="./assets/favorites_modal.js"></script>
 </body>
 </html>
