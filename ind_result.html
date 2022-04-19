@@ -4,25 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="stylesheet" href="assets/result-style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     
     <title>🍻Find My Brewery</title>
 </head>
 <body>
   <h1 class="title">Find My Brewery</h1>
-    <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item">
-            Favorites
-          </a>
-        </div>
-      </nav>    -->
-        <section class="container is-fluid">
+    
+        <section class="container column is-fluid">
+            
+            <!-- <nav class="navbar container column is-three-fifths">
+                <div class="navbar-menu">
+                    <div>
+                        
+                        <form class="field is-horizontal">
+                            <h2 id="search-title" class="column">Search:</h2>
+                            <input type="text" placeholder="Enter City..." id="city-input" class="input column is-vcentered form-control">
+                            <div class="select column is-vcentered">
+                                <select id="type-options" class="input">
+                                    <option value="" disabled selected hidden>Select brewery type</option>
+                                    <option id="typechoice-micro" name="type" value="micro">Micro</option>
+                                    <option id="typechoice-brewpub" name="type" value="brewpub">Brewpub</option>
+                                    <option id="typechoice-regional" name="type" value="regional">Regional</option>
+                                </select>
+                            </div>
+                            <button id="submitBtn" class="column">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav> -->
+
             <section class="columns">
               <section class="column is-one-fifth"></section>
                 <section class="column is-one-fifth">
@@ -30,10 +44,6 @@
                         <section id="search-bar container">
                             <h2 class="column is-full" id="search-title">Search</h2>
                             <form id="search-form">
-                                <input type="text" placeholder="Enter City..." id="search-input" class="column is-one-third form-control">
-                                <button class= "column is-one-third" id="search-btn">Search</button>
-                            </form>
-                            <button class="column is-one-third" id="clear-history">Clear History</button>
                                 <input type="text" placeholder="Enter City..." id="city-input" class="column is-full form-control">
                                 <div class="select">
                                   <select id="type-options">
@@ -53,13 +63,10 @@
                 </section>
                 <section class="column is-two-fifths">
                     <main>
-                        <section class="row container" id="brewery-display">
-                            <section class="column">
-                                <!-- card to display the brewery search results -->
-                                <div class="card  hide column is-half">
                         <section class="row container" id="brewery-display-title"></section>
                         <section class="row container" id="brewery-display">
                             <section class="column">
+                                
                                 <!-- card to display the brewery search results -->
                                 <!-- <div class="card">
                                     <header class="card-header">
@@ -68,16 +75,6 @@
                                     </header>
                                     <div class="card-content">
                                       <div class="content" id="brewery-info">
-                                        
-                                             Type:
-                                            <p id="brewery-type"></p><br><br>
-                                            Address:
-                                            <p id="brewery-adress"></p><br><br>
-                                            Phone:
-                                            <p id="brewery-phone"></p><br><br>
-                                            Website:
-                                            <p id="brewery-website"></p> -->
-                                        
                                        
                                         Type:
                                         <p id="brewery-type"></p>
@@ -98,12 +95,16 @@
                                   </div> -->
                             </section>
                         </section>
+                        
                     </main>
                 </section>
             </section>
         </section>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="./assets/search_searchresults.js"></script>
-        <script src="./assets/searchresults.js"></script>
+        <script src="./assets/ind_script.js"></script>
+        <script src="./assets/favorites.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNnCjPwllZ0K35IujZeR9a98MKnlG3xr0&callback=initMap&v=weekly" defer></script>
 </body>
 </html>

@@ -28,3 +28,5 @@ In collaboration by: AJ Figueroa, Chris Ginn and Ben Smith.
 ## Deployment
 
 ## Mock-Up
+
+![Find My Brewery entry page, with orange background with wheat accents and beer glasses, changes screen to the age input screen and then to search area.](/assets/images/mockup.gif)
